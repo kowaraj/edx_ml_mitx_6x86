@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 xy = np.array( [
     [-1,  -1,  1], 
     [ 1,   0, -1],
-    [-1,  10,  1],
+    [-1, 1.5,  1],
 ])
 
 T = 10 #number of runs
@@ -28,12 +28,12 @@ if __name__ == '__main__':
             # print('ith = ' + str(ith))
             x = xy[ith][0:2]
             y = xy[ith][2]
-            # print('x = ', str(x))
-            # print('y = ', str(y))
-            # print('theta = ' + str(theta))
+            print('x = ', str(x))
+            print('y = ', str(y))
+            print('theta = ' + str(theta))
 
             z = y * (np.dot(x, theta))
-            # print('z = ' + str(z))
+            print('z = ' + str(z))
             if z <=0:
                 failed = True
                 m +=1
@@ -59,10 +59,14 @@ if __name__ == '__main__':
     x1s = [(xy[i][0]) for i in range(len(xy))]
     x2s = [(xy[i][1]) for i in range(len(xy))]
     ys  = ['red' if (xy[i][2]) == -1 else 'blue' for i in range(len(xy))]
-    print(ys)
     plt.scatter(x1s, x2s, s=100, c=ys)
 
+    # Plot the decision boundary
     x = np.linspace(-10, 10, 100)
-    decision_b = 2 * x + 3
-    plt.plot(x, decision_b)
+    th_1, th_2 = theta[0], theta[1]
+    if th_2 == 0:
+        plt.axvline(x=th_1)
+    else:
+        decision_b = -1 * (theta_0 + th_1*x) / th_2
+        plt.plot(x, decision_b)
     plt.show()
