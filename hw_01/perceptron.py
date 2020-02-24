@@ -6,7 +6,6 @@ xy = np.array( [
     [-1, 1.5,  1],
 ])
 
-
 T = 10 #number of runs
 N = len(xy) #number of samples
 
@@ -39,4 +38,4 @@ if __name__ == '__main__':
                 print('SUCCESS: theta = ['+str(theta)+']')
 
 
-        input()
+        input('Run another {} iteration?'.format(j))
