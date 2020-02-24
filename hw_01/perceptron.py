@@ -61,4 +61,8 @@ if __name__ == '__main__':
     ys  = ['red' if (xy[i][2]) == -1 else 'blue' for i in range(len(xy))]
     print(ys)
     plt.scatter(x1s, x2s, s=100, c=ys)
+
+    x = np.linspace(-10, 10, 100)
+    decision_b = 2 * x + 3
+    plt.plot(x, decision_b)
     plt.show()
