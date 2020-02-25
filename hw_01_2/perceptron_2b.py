@@ -16,8 +16,8 @@ xy = np.array( [
 T = 10 #number of runs
 N = len(xy) #number of samples
 
-theta_12 = np.array([0,0], dtype=np.float64)
-theta_0 = 0
+theta_12 = np.array([-3.,3.], dtype=np.float64)
+theta_0 = -3.
 theta = np.append(theta_12, theta_0)
 thetas = []
 
